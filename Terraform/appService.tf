@@ -1,10 +1,10 @@
 resource "azurerm_resource_group" "test" {
-  name     = "AzureBootCampTerraformRg"
+  name     = "FjsolisAzureBootCampTerraformRg"
   location = "eastus2"
 }
 
 resource "azurerm_app_service_plan" "test" {
-  name                = "azbctf-appserviceplan"
+  name                = "Fjsolis-azbctf-appserviceplan"
   location            = "${azurerm_resource_group.test.location}"
   resource_group_name = "${azurerm_resource_group.test.name}"
 
@@ -15,7 +15,7 @@ resource "azurerm_app_service_plan" "test" {
 }
 
 resource "azurerm_app_service" "test" {
-  name                = "azbctf-app-service"
+  name                = "Fjsolis-azbctf-app-service"
   location            = "${azurerm_resource_group.test.location}"
   resource_group_name = "${azurerm_resource_group.test.name}"
   app_service_plan_id = "${azurerm_app_service_plan.test.id}"
